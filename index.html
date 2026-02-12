@@ -618,9 +618,6 @@
                 <img id="countryball-flag" src="bandeira.png" alt="Bandeira Brasil Verso" class="countryball-flag">
                 <p style="margin-top: 20px; font-size: 1.3em;">🌟 A bandeira oficial do Brasil Verso! 🌟</p>
                 <p>Um símbolo espacial que representa nossa paixão pelos countryballs e nossas raízes brasileiras!</p>
-                <p style="margin-top: 15px; font-size: 0.9em; color: var(--space-cyan);">
-                    💡 <strong>Instruções:</strong> Faça upload da imagem da bandeira com o nome "bandeira.png" no seu repositório GitHub para ela aparecer aqui!
-                </p>
             </div>
         </div>
 
@@ -771,7 +768,7 @@
                 container.appendChild(milestoneDiv);
             });
 
-            // Adicionar marco do vídeo mais visto se houver vídeos
+            // Adicionar marco do vídeo/short mais visto se houver vídeos
             if (allVideos.length > 0) {
                 const mostViewedVideo = [...allVideos].sort((a, b) => 
                     parseInt(b.statistics?.viewCount || 0) - parseInt(a.statistics?.viewCount || 0)
@@ -780,13 +777,17 @@
                 if (mostViewedVideo && mostViewedVideo.statistics) {
                     const videoViews = parseInt(mostViewedVideo.statistics.viewCount);
                     const videoMilestones = [
-                        { target: 1000, emoji: '🎯', label: '1K Views em um Vídeo' },
-                        { target: 5000, emoji: '🎪', label: '5K Views em um Vídeo' },
-                        { target: 10000, emoji: '🎨', label: '10K Views em um Vídeo' },
-                        { target: 50000, emoji: '🎭', label: '50K Views em um Vídeo' },
-                        { target: 100000, emoji: '🎬', label: '100K Views em um Vídeo' },
-                        { target: 500000, emoji: '🎸', label: '500K Views em um Vídeo' },
-                        { target: 1000000, emoji: '🎤', label: '1M Views em um Vídeo' },
+                        { target: 1000, emoji: '📱', label: '1K Views em 1 Short' },
+                        { target: 5000, emoji: '📲', label: '5K Views em 1 Short' },
+                        { target: 10000, emoji: '🎯', label: '10K Views em 1 Short' },
+                        { target: 25000, emoji: '🎪', label: '25K Views em 1 Short' },
+                        { target: 50000, emoji: '🎨', label: '50K Views em 1 Short' },
+                        { target: 100000, emoji: '🎭', label: '100K Views em 1 Short' },
+                        { target: 250000, emoji: '🎬', label: '250K Views em 1 Short' },
+                        { target: 500000, emoji: '🎸', label: '500K Views em 1 Short' },
+                        { target: 1000000, emoji: '🎤', label: '1M Views em 1 Short' },
+                        { target: 5000000, emoji: '🏆', label: '5M Views em 1 Short' },
+                        { target: 10000000, emoji: '👑', label: '10M Views em 1 Short' },
                     ];
 
                     videoMilestones.forEach(vm => {
@@ -817,10 +818,10 @@
 
         // Buscar estatísticas do canal
         async function fetchChannelStats() {
-            if (YOUTUBE_API_KEY === 'SUA_API_KEY_AQUI') {
-                document.getElementById('subscriber-count').textContent = '???';
-                document.getElementById('video-count').textContent = '???';
-                document.getElementById('view-count').textContent = '???';
+            if (YOUTUBE_API_KEY === 'AIzaSyAODGDP5igGy9ZsdsATanGDf0o2XAUQVu0') {
+                document.getElementById('subscriber-count').textContent = '—';
+                document.getElementById('video-count').textContent = '—';
+                document.getElementById('view-count').textContent = '—';
                 createMilestones({ subscriberCount: 0, videoCount: 0, viewCount: 0 });
                 return null;
             }
